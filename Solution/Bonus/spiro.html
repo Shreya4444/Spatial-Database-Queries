@@ -1,0 +1,44 @@
+<html>
+<body>
+	<pre>
+	
+var R=2.5, r=0.5, a=4;
+var x0=R+r-a, y0=0;
+var startX = -118.289141;
+var startY = 34.021193;
+var factor = 0.001;
+var cos = Math.cos, sin = Math.sin, pi = Math.PI, nRev = 10;
+var outputStr='';
+for(var t=0.0;t&lt;(pi*nRev);t+=0.01){
+    var x = (R+r)*cos((r/R)*t) - a*cos((1+r/R)*t);
+    var y = (R+r)*sin((r/R)*t) - a*sin((1+r/R)*t);
+    outputX=startX+factor*x;
+    outputY=startY+factor*y;
+    outputStr+=outputX+&quot;,&quot;+outputY+&quot;,100&lt;br/&gt;&quot;;
+}
+document.getElementById(&quot;coords&quot;).innerHTML = outputStr;
+	
+	</pre>
+	<div>Coodinates with SGM as Center: -118.289141,34.021193</div>
+	<div id="coords"></div>
+	<script type="text/javascript">
+	var R=2.5, r=0.5, a=4;
+	var x0=R+r-a, y0=0;
+	var startX = -118.289141;
+	var startY = 34.021193;
+	var factor = 0.001;
+
+	var cos = Math.cos, sin = Math.sin, pi = Math.PI, nRev = 10;
+	var outputStr='';
+	for(var t=0.0;t<(pi*nRev);t+=0.01){
+		var x = (R+r)*cos((r/R)*t) - a*cos((1+r/R)*t);
+		var y = (R+r)*sin((r/R)*t) - a*sin((1+r/R)*t);
+		outputX=startX+factor*x;
+		outputY=startY+factor*y;
+		outputStr+=outputX+","+outputY+",100<br/>";
+	}
+	
+	document.getElementById("coords").innerHTML = outputStr;
+	</script>
+</body>
+</html>
